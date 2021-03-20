@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Keyger.MainPage"
+             BackgroundColor="#212121"
+             Visual="Material">
+
+    <Grid  Margin="30,20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid x:Name="header" Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            
+            <Label VerticalOptions="Start" Grid.Column="0" Text="Keyapp" FontSize="Title" TextColor="White"/>
+
+            <StackLayout Grid.Column="1" Orientation="Horizontal" HorizontalOptions="EndAndExpand" VerticalOptions="Start">
+                <ImageButton x:Name="navigateToHelpPage" Clicked="navigateToHelpPage_Clicked" BackgroundColor="#212121" WidthRequest="42" HeightRequest="42" Source="info.png"  Aspect="AspectFit" Padding="5"/>
+                <ImageButton x:Name="navigateToStoragePage" Clicked="navigateToStoragePage_Clicked" BackgroundColor="#212121" WidthRequest="42" HeightRequest="42" Source="inventory.png" Aspect="AspectFit" Padding="5"/>
+            </StackLayout>
+
+        </Grid>
+
+        <Grid x:Name="main_content" Grid.Row="1"  Padding="0,20,0,20">
+            <StackLayout>
+                <StackLayout>
+                    <Label Text="Key gerada:" TextColor="White" FontSize="Subtitle" FontAttributes="Bold"/>
+                    <Label x:Name="keyGenerateDisplayLbl" Margin="0,10,0,0" Text="AxçY$@h?i4" FontFamily="Roboto" HorizontalOptions="StartAndExpand" TextColor="White" FontSize="Medium" FontAttributes="Bold" />
+                </StackLayout>
+
+                <StackLayout Margin="0,20,0,0" HorizontalOptions="Center" Orientation="Horizontal">
+                    <ImageButton x:Name="requestShare" Clicked="requestShare_Clicked" BackgroundColor="#212121" WidthRequest="48" HeightRequest="48" Source="share.png"  Aspect="AspectFit" Padding="5"/>
+                    <ImageButton x:Name="navigateToSavePage" Clicked="navigateToSavePage_Clicked" BackgroundColor="#212121" WidthRequest="48" HeightRequest="48" Source="save.png" Aspect="AspectFit" Padding="5"/>
+
+                </StackLayout>
+            </StackLayout>
+            
+        </Grid>
+
+        <Grid x:Name="form" Grid.Row="2" Padding="0,20,0,20" VerticalOptions="CenterAndExpand">
+            <StackLayout>
+                <StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Defina o número de caracteres: " TextColor="White" FontSize="Subtitle"/>
+                        <Label x:Name="sliderValueLbl" Text="11" TextColor="White" FontSize="Subtitle" FontAttributes="Bold"/>
+                    </StackLayout>
+                    <Grid Margin="0,20,0,20">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="auto"/>
+                        </Grid.ColumnDefinitions>
+                        
+                        <Label Text="04" TextColor="White" Grid.Column="0" HorizontalOptions="StartAndExpand"/>
+                        
+                        <Slider x:Name="sliderCtrValue" ValueChanged="sliderCtrValue_ValueChanged" Grid.Column="1"  Maximum="30" Minimum="4" Value="11"/>
+                        <Label TextColor="White" Grid.Column="2" Text="30" HorizontalOptions="StartAndExpand"/>
+                    </Grid>
+                </StackLayout>
+
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+
+                    <RadioButton x:Name="patternRdBtn" CheckedChanged="patternRdBtn_CheckedChanged" IsChecked="True" TextColor="White" Margin="0,5,0,5" HorizontalOptions="StartAndExpand" Content="Padrão" FontSize="Subtitle" Grid.Row="0" Grid.Column="0"/>
+                    <RadioButton x:Name="simboldRBtn" CheckedChanged="simboldRBtn_CheckedChanged" TextColor="White" Margin="0,5,0,5" HorizontalOptions="StartAndExpand" Content="Simbolos" FontSize="Subtitle" Grid.Row="0" Grid.Column="1"/>
+                                  
+                    <RadioButton x:Name="numericRdBtn" CheckedChanged="numericRdBtn_CheckedChanged" TextColor="White" Margin="0,5,0,5" HorizontalOptions="StartAndExpand" Content="Númerico" FontSize="Subtitle" Grid.Row="1" Grid.Column="0"/>
+                    <RadioButton x:Name="characterpatterRdBtn" CheckedChanged="characterpatterRdBtn_CheckedChanged" TextColor="White" Margin="0,5,0,5" HorizontalOptions="StartAndExpand" Content="Caractere" FontSize="Subtitle" Grid.Row="1" Grid.Column="1"/>
+
+                    <RadioButton x:Name="binaryRdBtn" CheckedChanged="binaryRdBtn_CheckedChanged" TextColor="White" Margin="0,5,0,5" HorizontalOptions="StartAndExpand" Content="Binario" FontSize="Subtitle" Grid.Row="2" Grid.Column="0"/>
+                    <RadioButton x:Name="emoticonRdBtn" CheckedChanged="emoticonRdBtn_CheckedChanged" TextColor="White" Margin="0,5,0,5" HorizontalOptions="StartAndExpand" Content="Emogi" FontSize="Subtitle" Grid.Row="2" Grid.Column="1"/>
+
+                </Grid>
+                
+            </StackLayout>
+        </Grid>
+
+        <Grid x:Name="action" Grid.Row="3" Margin="0,0,0,20">
+            <Button x:Name="generateKeyBtn" Clicked="generateKeyBtn_Clicked" VerticalOptions="End" WidthRequest="100" Text="Gerar" FontSize="Medium" CornerRadius="100" TextTransform="None" TextColor="White" BackgroundColor="#04C40B"/>
+        </Grid>
+
+    </Grid>
+
+</ContentPage>

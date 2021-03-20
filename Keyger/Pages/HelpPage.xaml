@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Keyger.HelpPage"
+             BackgroundColor="#212121"
+             Visual="Material">
+    
+    <Grid Margin="30,20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="6*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackLayout Grid.Row="0">
+            <Label VerticalOptions="Start" Grid.Column="0" Text="Keyapp" FontSize="Title" TextColor="White"/>
+            <Label TextColor="White" Text="Bem vindo ao tutorial !!" FontAttributes="Bold" FontSize="Subtitle"/>
+        </StackLayout>
+        
+        <ScrollView Grid.Row="1" Margin="0, 5">
+            <StackLayout>
+                <Label TextType="Text"
+                    TextColor="White"
+                    FontSize="20"
+                    Text="O keyapp foi projetado para oferecer e assegurar que novas senhas criadas possam ter boa confiabilidade e segurança, utilizando um mecanismo de geração aleatória, automaticamente, e ainda você tem o controle de customizar a quantidade de caracteres
+e ainda o tipo: Aleatório (símbolos, 
+números e caracteres misturados),
+Somente Numérico ou somente
+Caractere.
+
+Você pode salvar suas senhas geradas
+para posterior conferencia, definido
+somente a que serviço a mesma per-
+tence (obrigatoria) e uma descriação 
+(opcional) para ajudar você na identi-
+ficação."
+                />
+
+
+            </StackLayout>
+        </ScrollView>
+
+        <Button x:Name="naviagetToMainPage" Clicked="naviagetToMainPage_Clicked" Grid.Row="2" VerticalOptions="End" WidthRequest="100" Text="Voltar" FontSize="Medium" CornerRadius="100" TextTransform="None" TextColor="White" BackgroundColor="#04C40B"/>
+
+
+    </Grid>
+</ContentPage>
