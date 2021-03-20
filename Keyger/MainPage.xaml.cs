@@ -56,6 +56,7 @@ namespace Keyger
         {
             Share.RequestAsync(new ShareTextRequest
             {
+
                 Text = keyGenerateDisplayLbl.Text,
                 Title = "Enviar key para..."
             });
