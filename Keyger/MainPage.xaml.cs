@@ -47,7 +47,7 @@ namespace Keyger
 
         private async void navigateToSavePage_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushModalAsync(new SavePage());
+            await Navigation.PushModalAsync(new SavePage(this.keyGenerateDisplayLbl.Text));
         }
         //<<<<<
 

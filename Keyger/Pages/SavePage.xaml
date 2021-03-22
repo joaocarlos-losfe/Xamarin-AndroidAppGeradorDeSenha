@@ -1,12 +1,53 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Keyger.SavePage">
-    <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
-    </ContentPage.Content>
+             x:Class="Keyger.SavePage"
+             BackgroundColor="#212121"
+             Visual="Material">
+    <Grid Margin="30,20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Label VerticalOptions="Start" Grid.Row="0" Text="Keyger" FontSize="Title" TextColor="White"/>
+        
+        <Grid x:Name="displayInfo" Grid.Row="1"  Padding="0,20,0,20">
+            <StackLayout>
+                <StackLayout>
+                    <Label Text="Key gerada:" TextColor="White" FontSize="Subtitle" FontAttributes="Bold"/>
+                    <Label x:Name="keyGenerateDisplayLbl" Margin="0,0,0,30" Text="AxçY$@h?i4" FontFamily="Roboto" HorizontalOptions="StartAndExpand" TextColor="White" FontSize="Medium" FontAttributes="Bold" />
+
+                    <Label Margin="0,0,0,0" Text="Criada em:" TextColor="White" FontSize="Subtitle" FontAttributes="Bold"/>
+                    <Label x:Name="creationDateDisplayLbl" Margin="0,0,0,0" Text="22/03/2021" FontFamily="Roboto" HorizontalOptions="StartAndExpand" TextColor="White" FontSize="Medium" FontAttributes="Bold" />
+                </StackLayout>
+            </StackLayout>
+        </Grid>
+
+        <Grid Grid.Row="2">
+            <StackLayout>
+                <Label Text="Serviço *" TextColor="White" FontSize="16"/>
+                <Frame Padding="0" CornerRadius="5">
+                    <Entry TextColor="White" BackgroundColor="#5E5E5E" Keyboard="Text"/>
+                </Frame>
+
+                <Label Margin="0,30,0,0" Text="Descrição" TextColor="White" FontSize="16"/>
+                <Frame Padding="0" CornerRadius="5">
+                    <Entry TextColor="White" BackgroundColor="#5E5E5E" Keyboard="Text"/>
+                </Frame>
+            </StackLayout>
+
+        </Grid>
+
+        <Grid x:Name="action" Grid.Row="3" Margin="0,0,0,20">
+            <StackLayout Orientation="Horizontal" VerticalOptions="End" HorizontalOptions="CenterAndExpand" Spacing="30">
+                <Button x:Name="cancelBtn" Clicked="cancelBtn_Clicked" WidthRequest="160" Text="Cancelar" FontSize="Medium" CornerRadius="100" TextTransform="None" TextColor="White" BackgroundColor="#328835"/>
+                <Button  WidthRequest="150" Text="Salvar" FontSize="Medium" CornerRadius="100" TextTransform="None" TextColor="White" BackgroundColor="#04C40B"/>
+            </StackLayout>
+        </Grid>
+
+    </Grid>
+    
 </ContentPage>

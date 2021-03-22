@@ -19,7 +19,7 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
             
-            <Label VerticalOptions="Start" Grid.Column="0" Text="Keyapp" FontSize="Title" TextColor="White"/>
+            <Label VerticalOptions="Start" Grid.Column="0" Text="Keyger" FontSize="Title" TextColor="White"/>
 
             <StackLayout Grid.Column="1" Orientation="Horizontal" HorizontalOptions="EndAndExpand" VerticalOptions="Start">
                 <ImageButton x:Name="navigateToHelpPage" Clicked="navigateToHelpPage_Clicked" BackgroundColor="#212121" WidthRequest="42" HeightRequest="42" Source="info.png"  Aspect="AspectFit" Padding="5"/>
